@@ -31,7 +31,7 @@ namespace YouTubeInfo
             await GetHtmlAsync();
 
             //5. Get link of the 1st search result
-            //TODO learn about async and wait
+            //TODO learn about async and wait xD
 
             //6. Do 4th step but with different link
 
