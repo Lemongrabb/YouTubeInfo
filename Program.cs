@@ -14,7 +14,7 @@ namespace YouTubeInfo
     partial class Program
     {
         static string link, FilenameBeforeConvertion, Filename;
-        static string directory = @"C:\Users\ktomc\Desktop\";
+        static string directory = @"C:\YTinfoDownloads\";
 
         static void Main()
         {
@@ -149,6 +149,7 @@ namespace YouTubeInfo
         {
             YouTube youTube = YouTube.Default; //TODO handle connection error exception
             YouTubeVideo video = youTube.GetVideo(link);
+            if(!Directory.Exists(directory)) Directory.CreateDirectory(directory);
             File.WriteAllBytes(directory + video.FullName, video.GetBytes()); //TODO let user change directory
 
             var inputFile = new MediaFile(FilenameBeforeConvertion = Filename = directory + video.FullName); //TODO let user choose a name
@@ -167,6 +168,7 @@ namespace YouTubeInfo
         {
             YouTube youTube = YouTube.Default;
             YouTubeVideo video = youTube.GetVideo(link);
+            if(!Directory.Exists(directory)) Directory.CreateDirectory(directory);
             File.WriteAllBytes(directory + video.FullName, video.GetBytes()); //TODO let user change directory
             Console.WriteLine("\nMP4 downloaded successfully"); //TODO make a progress bar
             Process.Start("explorer.exe", directory);
