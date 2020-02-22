@@ -15,6 +15,8 @@ using System.Diagnostics;
     But most importantly, it allows to quick download audio and/or video of a clip.
     The app will be probably upgraded in a future.
 
+    Made by: Lemongrabb
+
     THE TO DO LIST
     TODO let user choose a name and directory of saved file
     TODO make a fancy progress bar
